@@ -1,5 +1,6 @@
 package br.com.tiagopedroso.desafiodiopadroesprojeto.controller;
 
+import br.com.tiagopedroso.desafiodiopadroesprojeto.dto.ClienteCreate;
 import br.com.tiagopedroso.desafiodiopadroesprojeto.model.Cliente;
 import br.com.tiagopedroso.desafiodiopadroesprojeto.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +33,9 @@ public class ClienteRestController {
 	}
 
 	@PostMapping
-	public ResponseEntity<Cliente> inserir(@RequestBody Cliente cliente) {
-		clienteService.inserir(cliente);
-		return ResponseEntity.ok(cliente);
+	public ResponseEntity<Cliente> inserir(@RequestBody ClienteCreate novoCliente) {
+		var clienteInserido = clienteService.inserir(novoCliente.convertToModel());
+		return ResponseEntity.ok(clienteInserido);
 	}
 
 	@PutMapping("/{id}")

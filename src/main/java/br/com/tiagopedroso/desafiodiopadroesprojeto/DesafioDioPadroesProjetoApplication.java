@@ -10,6 +10,7 @@ public class DesafioDioPadroesProjetoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DesafioDioPadroesProjetoApplication.class, args);
+		System.out.println("\n\n API Design Patterns Básico iniciado :D\n\n");
 	}
 
 }
